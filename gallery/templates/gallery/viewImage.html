@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} - View{% endblock %}
+
+{% block content %}
+<div>
+    {% if user == img.user %}
+    <center><h1 class="image-title">{{img.title}}</h1></center>
+    {% endif %}
+    <center><a href="/gallery" class="btn btn-dark" style="margin-top: 20px; margin-bottom: 30px;">Back to Gallery</a>{% if user == img.user %}<a href="delete/{{img.id}}" class="btn btn-dark confirm-btn" style="margin-top: 20px; margin-bottom: 30px; margin-left: 35px;">Delete</a>{% endif %}</center>
+    <center>
+        {% if user == img.user %}
+        <div class="view-image">
+            <img src="{{img.image.url}}">
+        </div>
+        {% else %}
+        <p>This image is from another user.</p>
+        {% endif %}
+    </center>
+</div>
+{% endblock %}

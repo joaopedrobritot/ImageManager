@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} - Gallery{% endblock %}
+
+{% block content %}
+
+
+<!-- Conteúdo da Galeria -->
+<center><h1 class="gallery-title" style="display: inline-block;">Your Gallery</h1></center>
+{% if imgs.count > 0 %}
+<center>
+    <div>
+        <a class="btn btn-dark btn-lg" style="margin-bottom: 30px; margin-right: 50px;" href="upload/">Upload Image</a>
+        <a class="btn btn-dark btn-lg confirm-btn" style="margin-bottom: 30px;" href="delete/all">Delete All Images</a>
+    </div>
+</center>
+{% endif %}
+<center><div class="gallery-images col-14">
+    {% if imgs.count == 0 %}
+    <p style="margin-bottom: 50px;">You have no Images yet :(</p>
+    <a class="btn btn-dark" href="upload/">Upload Image</a>
+    {% endif %}
+    {% for img in imgs %}
+    <a href="view/{{img.id}}"><img class="image-item" src="{{img.image.url}}" alt=""></a>
+    {% endfor %}
+</div></center>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+
+<center><h1 style="margin-bottom: 50px; margin-top: 50px;">Welcome to my first project made in Django!</h1></center>
+<center>
+    <div>
+        <p>I decided to create this system in order to practice my skills in the framework that i'm learning <b>Django</b>.</p>
+        <p>Hope you liked it!</p>
+        <p>First you'll need to create a account to use our Image Manager System.</p>
+    
+        <a class="btn btn-dark" href="accounts/register">Create Account</a>
+        <p></p>
+        <p>Already have an account?</p>
+
+        <a class="btn btn-dark" href="accounts/login">Login</a>
+        <p></p>
+        <p>Already Logged?</p>
+        <a class="btn btn-dark" href="gallery/">Gallery</a>
+    </div>
+</center>
+
+{% endblock %}

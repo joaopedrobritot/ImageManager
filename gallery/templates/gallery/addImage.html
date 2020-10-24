@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} - Upload Image{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Add new Image</h1>
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <center><input type="submit" class="btn btn-dark" value="Upload Image"></center>
+    </form>
+</div>
+{% endblock %}
