@@ -1,5 +1,3 @@
-console.log("All good!")
-
 $(document).ready(function() {
     $('.html').css({'opacity' : '1'});
 
@@ -13,6 +11,7 @@ $(document).ready(function() {
     var fadeOutHTML = function(link) {
         $('.html').css({'opacity' : '0'});
         setTimeout(function() {
+	    $('.html').css({'opacity' : '1'});
             window.location = link;
         }, 800);
     }
