@@ -11,7 +11,9 @@ $(document).ready(function() {
     var fadeOutHTML = function(link) {
         $('.html').css({'opacity' : '0'});
         setTimeout(function() {
-	    $('.html').css({'opacity' : '1'});
+            setTimeout(function() {
+                $('.html').css({'opacity' : '1'});
+            }, 800);
             window.location = link;
         }, 800);
     }
