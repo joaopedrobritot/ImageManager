@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} - Resin Calculator{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1 style="margin-top: 20px;">Resin Calculator</h1>
+    Note: if you enter a value greater than 160 the system will set the value to 160<br/>
+    Note2: the system calculate based in the America/Recife timezone.
+    <p></p>
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <center><input type="submit" class="btn btn-dark" value="Calculate"></center>
+    </form>
+
+    {% if result == '99:99' %}
+    <center><h1 style="margin-top: 30px;">The result will show here.</h1></center>
+    {% else %}
+    <center><h1 style="margin-top: 30px;">Your resin will be recharged at: {{result}}</h1></center>
+    {% endif %}
+</div>
+{% endblock %}
